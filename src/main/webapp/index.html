@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBoss Demo Application</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .endpoints {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .endpoints h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .endpoint {
+            background: white;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .endpoint:hover {
+            transform: translateX(5px);
+        }
+
+        .endpoint-url {
+            color: #667eea;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .endpoint-desc {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #764ba2;
+        }
+
+        .info {
+            background: #e7f3ff;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .info strong {
+            color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 JBoss Demo Application</h1>
+        <p class="subtitle">Running on WildFly 26.1.3 with JDK 17</p>
+
+        <div class="info">
+            <strong>ℹ️ Info:</strong> This is a standard JBoss/WildFly demo application showcasing environment variable access via REST API.
+        </div>
+
+        <div class="endpoints">
+            <h2>📡 Available API Endpoints</h2>
+
+            <div class="endpoint">
+                <a href="/jboss-demo/api/environment/health" target="_blank" class="endpoint-url">
+                    GET /api/environment/health
+                </a>
+                <span class="endpoint-desc">Health check endpoint</span>
+            </div>
+
+            <div class="endpoint">
+                <a href="/jboss-demo/api/environment/all" target="_blank" class="endpoint-url">
+                    GET /api/environment/all
+                </a>
+                <span class="endpoint-desc">Get all environment variables (JSON)</span>
+            </div>
+
+            <div class="endpoint">
+                <a href="/jboss-demo/api/environment/custom" target="_blank" class="endpoint-url">
+                    GET /api/environment/custom
+                </a>
+                <span class="endpoint-desc">Get custom environment variables (APP_NAME, APP_VERSION, etc.)</span>
+            </div>
+
+            <div class="endpoint">
+                <a href="/jboss-demo/api/environment/smart" target="_blank" class="endpoint-url">
+                    GET /api/environment/smart
+                </a>
+                <span class="endpoint-desc">Smart config reading (JNDI → Env → Properties → Default)</span>
+            </div>
+
+            <div class="endpoint">
+                <a href="/jboss-demo/api/environment/methods" target="_blank" class="endpoint-url">
+                    GET /api/environment/methods
+                </a>
+                <span class="endpoint-desc">Compare different reading methods for environment variables</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center;">
+            <button class="button" onclick="window.location.href='/jboss-demo/api/environment/all'">
+                View All Environment Variables
+            </button>
+            <button class="button" onclick="window.location.href='/jboss-demo/api/environment/custom'">
+                View Custom Variables
+            </button>
+            <button class="button" onclick="window.location.href='/jboss-demo/api/environment/smart'">
+                Smart Config Reading
+            </button>
+        </div>
+    </div>
+</body>
+</html>

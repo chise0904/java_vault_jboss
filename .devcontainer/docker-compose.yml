@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  dev:
+    image: maven:3.9-eclipse-temurin-17
+    volumes:
+      - ..:/workspace:cached
+      - maven-cache:/root/.m2
+    command: sleep infinity
+    network_mode: host
+    environment:
+      - JAVA_HOME=/opt/java/openjdk
+      - MAVEN_CONFIG=/root/.m2
+
+volumes:
+  maven-cache:

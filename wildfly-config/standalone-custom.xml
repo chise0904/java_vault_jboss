@@ -1,0 +1,17 @@
+<!-- WildFly JNDI 環境變數設定範例 -->
+<!--
+將此內容加入到 WildFly 的 standalone.xml 的 <subsystem xmlns="urn:jboss:domain:naming:2.0"> 區段中
+
+路徑: $JBOSS_HOME/standalone/configuration/standalone.xml
+-->
+
+<subsystem xmlns="urn:jboss:domain:naming:2.0">
+    <bindings>
+        <!-- 字串型態的環境變數 -->
+        <simple name="java:global/env/APP_NAME" value="JBoss Demo Application" type="java.lang.String"/>
+        <simple name="java:global/env/APP_VERSION" value="1.0.0" type="java.lang.String"/>
+        <simple name="java:global/env/APP_ENVIRONMENT" value="production" type="java.lang.String"/>
+        <simple name="java:global/env/DATABASE_URL" value="jdbc:postgresql://localhost:5432/demodb" type="java.lang.String"/>
+        <simple name="java:global/env/API_KEY" value="demo-api-key-12345" type="java.lang.String"/>
+    </bindings>
+</subsystem>

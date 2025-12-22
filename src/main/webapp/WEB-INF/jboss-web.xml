@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web xmlns="http://www.jboss.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee
+           http://www.jboss.org/schema/jbossas/jboss-web_14_0.xsd"
+           version="14.0">
+
+    <!-- Context Root 設定 -->
+    <context-root>/jboss-demo</context-root>
+
+    <!--
+    注意: JBoss/WildFly 不像 Tomcat 在這裡設定環境變數
+    環境變數設定請參考以下方式：
+    1. 系統環境變數 (docker-compose.yml)
+    2. standalone.xml 配置
+    3. jboss-deployment-structure.xml
+    4. JNDI 資源
+    -->
+
+</jboss-web>

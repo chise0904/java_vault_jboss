@@ -1,0 +1,41 @@
+{
+  "name": "JBoss Development Environment",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-maven",
+        "redhat.java",
+        "vscjava.vscode-java-debug",
+        "vscjava.vscode-java-test",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        "java.server.launchMode": "Standard",
+        "maven.executable.path": "/usr/bin/mvn"
+      }
+    }
+  },
+
+  "forwardPorts": [8080, 9990],
+  "portsAttributes": {
+    "8080": {
+      "label": "Application",
+      "onAutoForward": "notify"
+    },
+    "9990": {
+      "label": "WildFly Management",
+      "onAutoForward": "ignore"
+    }
+  },
+
+  "postCreateCommand": "mvn clean install",
+
+  "remoteUser": "vscode"
+}
