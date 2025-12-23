@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.3">
+    <deployment>
+        <dependencies>
+            <!-- 啟用 JSON-B (JSON Binding) 支援 -->
+            <module name="org.eclipse.yasson"/>
+            <module name="jakarta.json.bind.api"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>
