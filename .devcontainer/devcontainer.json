@@ -1,8 +1,13 @@
 {
   "name": "JBoss Development Environment",
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "dev",
-  "workspaceFolder": "/workspace",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
 
   "customizations": {
     "vscode": {
@@ -23,11 +28,15 @@
     }
   },
 
-  "forwardPorts": [8080, 9990],
+  "forwardPorts": [8080, 9990, 8787],
   "portsAttributes": {
     "8080": {
       "label": "Application",
       "onAutoForward": "notify"
+    },
+    "8787": {
+      "label": "Debug Port",
+      "onAutoForward": "ignore"
     },
     "9990": {
       "label": "WildFly Management",
@@ -35,7 +44,8 @@
     }
   },
 
-  "postCreateCommand": "mvn clean install",
+  "postCreateCommand": "/bin/bash .devcontainer/post-create.sh",
 
-  "remoteUser": "vscode"
+  "containerUser": "root",
+  "remoteUser": "root"
 }

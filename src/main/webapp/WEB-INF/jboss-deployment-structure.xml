@@ -4,7 +4,7 @@
         <dependencies>
             <!-- 啟用 JSON-B (JSON Binding) 支援 -->
             <module name="org.eclipse.yasson"/>
-            <module name="jakarta.json.bind.api"/>
+            <module name="javax.json.bind.api"/>
         </dependencies>
     </deployment>
 </jboss-deployment-structure>

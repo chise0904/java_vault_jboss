@@ -19,8 +19,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <!-- Jakarta EE 10 specifications -->
-        <jakarta.jakartaee-api.version>10.0.0</jakarta.jakartaee-api.version>
+        <!-- Jakarta EE 8 (compatible with WildFly 26.1.3) -->
+        <jakarta.jakartaee-api.version>8.0.0</jakarta.jakartaee-api.version>
 
         <!-- Maven plugin versions -->
         <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
